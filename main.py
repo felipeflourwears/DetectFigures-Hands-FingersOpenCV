@@ -3,6 +3,18 @@ import SeguimientoManos as sm
 import time
 import requests
 
+# URL del endpoint para enviar la solicitud POST
+url = "https://go.plural.io/api/robots/message/0cd59285-0ea5-4f73-87d9-a779fa275daa"
+
+# Token de autorización para la solicitud POST
+token = "+eXDVVWxRKZ9n0OQfXxQhg5Y7b2aaGIuYNQN25cAP7M="
+
+headers = {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json',
+    'Authorization': 'Token ' + token  # Espacio después de 'Bearer'
+}
+
 # Inicializa las variables de tiempo
 start_time = time.time()
 hand_present_time = 0
@@ -52,7 +64,23 @@ while True:
                     if same_fingers_time >= 5 and not same_fingers_detected:
                         same_fingers_detected = True
                         # Imprimir el mensaje después de 3 segundos
-                        
+                        if contar == 1:
+                            jsons = {"id": "1"}
+                            response = requests.post(url, json=jsons, headers=headers)
+                        elif contar == 2:
+                            jsons = {"id": "2"}
+                            response = requests.post(url, json=jsons, headers=headers)
+                        elif contar == 3:
+                            jsons = {"id": "3"}
+                            response = requests.post(url, json=jsons, headers=headers)
+                        elif contar == 4:
+                            jsons = {"id": "4"}
+                            response = requests.post(url, json=jsons, headers=headers)
+                        elif contar == 5:
+                            jsons = {"id": "5"}
+                            response = requests.post(url, json=jsons, headers=headers)
+                        else:
+                            print("No se envia nada")
                         print(f"Hay {contar} dedos durante 3 segundos")
                 else:
                     same_fingers_detected = False
