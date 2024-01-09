@@ -67,21 +67,26 @@ while True:
                         if contar == 1:
                             jsons = {"id": "1"}
                             response = requests.post(url, json=jsons, headers=headers)
+                            print(f"Hay {contar} dedos durante 3 segundos")
                         elif contar == 2:
                             jsons = {"id": "2"}
                             response = requests.post(url, json=jsons, headers=headers)
+                            print(f"Hay {contar} dedos durante 3 segundos")
                         elif contar == 3:
                             jsons = {"id": "3"}
                             response = requests.post(url, json=jsons, headers=headers)
+                            print(f"Hay {contar} dedos durante 3 segundos")
                         elif contar == 4:
                             jsons = {"id": "4"}
                             response = requests.post(url, json=jsons, headers=headers)
+                            print(f"Hay {contar} dedos durante 3 segundos")
                         elif contar == 5:
                             jsons = {"id": "5"}
                             response = requests.post(url, json=jsons, headers=headers)
+                            print(f"Hay {contar} dedos durante 3 segundos")
                         else:
                             print("No se envia nada")
-                        print(f"Hay {contar} dedos durante 3 segundos")
+                        
                 else:
                     same_fingers_detected = False
                     start_time = time.time()
